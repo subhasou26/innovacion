@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "925775230951",
+    "project_id": "innovacion-c1210",
+    "storage_bucket": "innovacion-c1210.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925775230951:android:ea1f4edf5adf5e26792f42",
+        "android_client_info": {
+          "package_name": "com.example.innovacion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLzWqn0bdf7t5FjcX-EssnLWi7RT1_ptY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
