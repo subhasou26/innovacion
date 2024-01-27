@@ -42,6 +42,8 @@ dependencies:
   chewie: ^1.7.4
   firebase_core: ^2.24.2
   firebase_database: ^10.4.0
+  cloud_firestore: ^4.14.0
+  url_launcher: ^6.1.14
 
 
 

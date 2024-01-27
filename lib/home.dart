@@ -3,6 +3,7 @@ import 'package:innovacion/data/data.dart';
 import 'package:innovacion/models/date_model.dart';
 import 'package:innovacion/models/event_model.dart';
 import 'package:innovacion/models/populer_event_model.dart';
+import 'package:innovacion/ShowData.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -124,10 +125,17 @@ class _HomeScreenState extends State<HomeScreen> {
                       scrollDirection: Axis.horizontal,
                       itemCount: events.length,
                       itemBuilder: (context,index){
-                        return EventTile(
-                          imgAssertPath:events[index].imgAssertPath ,
-                          eventType: events[index].eventType,
+                        return InkWell(
+                          onTap: (){
+                            Navigator.push(context,MaterialPageRoute(
+                                builder:(context)=>ShowData()
+                            ));
+                          },
+                          child: EventTile(
+                            imgAssertPath:events[index].imgAssertPath ,
+                            eventType: events[index].eventType,
 
+                          ),
                         );
                       },
                     ),
