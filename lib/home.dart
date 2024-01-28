@@ -85,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   SizedBox(height: 20,),
                   // Dates
-                  Container(
+                /*  Container(
                     height: 60,
                     child: ListView.builder(
                         itemCount: dates.length,
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         }
                     ),
-                  ),
+                  ),*/
                   SizedBox(height: 10,),
                   //Events
                   Text("All Events",style: TextStyle(

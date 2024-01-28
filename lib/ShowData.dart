@@ -44,7 +44,7 @@ class _ShowDataState extends State<ShowData> {
                     },
                     child: ListTile(
                       leading: CircleAvatar(
-                        child: Text("${index+1}"),
+                        backgroundImage: NetworkImage("${snapshot.data!.docs[index]["imagePath"]}"),
                       ),
                       title: Text("${snapshot.data!.docs[index]["desc"]}"),
                       subtitle: Text("${snapshot.data!.docs[index]["gfrom"]}"),
