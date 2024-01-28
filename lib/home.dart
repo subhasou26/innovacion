@@ -3,7 +3,7 @@ import 'package:innovacion/data/data.dart';
 import 'package:innovacion/models/date_model.dart';
 import 'package:innovacion/models/event_model.dart';
 import 'package:innovacion/models/populer_event_model.dart';
-import 'package:innovacion/ShowData.dart';
+import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -32,135 +32,342 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Container(
         child: Stack(
           children: <Widget>[
-          Container( decoration: BoxDecoration(
-            color: Color(0xff102733),
-          ),),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 50,horizontal:24 ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Image.asset("assets/logo.png",height: 30,),
-                      SizedBox(width: 4,),
-                      Row(
-                        children: <Widget>[
-                          Text("INNOVA",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w600
-                          ),),
-                          Text("CION",style: TextStyle(
-                              color:Colors.white,
-                              fontSize: 22,
-                              fontWeight: FontWeight.w600
-                          ),),
-                        ],
-                      ),
-                      Spacer(),
-                      Image.asset("assets/notify.png",height: 20,),
-                      SizedBox(width: 10,),
-                      Image.asset("assets/menu.png",height: 20,),
-                    ],
-                  ),
-                  SizedBox(height: 20,),
-                  Row(
-                    children:<Widget> [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text("Hello Users !",style: TextStyle(
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/background.jpg"),
+              fit: BoxFit.cover
+              ),
+
+            ),
+          ),
+
+            SingleChildScrollView(
+              child: Container(
+
+                padding: EdgeInsets.only(top: 50),
+                child: Column(
+
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("About The Event",style: TextStyle(
                             color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 19,
-                          ),),
-                          SizedBox(height: 6,),
-                          Text("Let's explore the events",style: TextStyle(
-                            color: Colors.white,fontSize: 15
-                          ),)
-                        ],
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700
+                        ),)
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+
+                        children:<Widget> [
+
+                          Expanded(
+                            child: Text("Institute of Engineering & Management, Kolkata in associate with University of Engeering & Management is organising its ANual Techno-management Fest-Innovacion 2024 from 10th-12th march,2024",
+                               style: TextStyle(
+                                 fontSize: 15,
+                                 color: Colors.white
+                               ), ),
+                          ),
+
+                            ],
+                      ),
+                    ),
+              SizedBox(height: 15,),
+                      Row(
+
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 50),
+                          width: 190,
+                          height: 80,
+
+                          decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(11),
+                              border: Border.all(color: Colors.blue,
+                                  width: 3)
+                          ),
+                          child: Center(child: Text("6L+ VIEWERS",style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.blue
+                          ),)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 150),
+                          width: 190,
+                          height: 80,
+
+                          decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(11),
+                              border: Border.all(color: Colors.blue,
+                                  width: 3)
+                          ),
+                          child: Center(child: Text("3.5L+ PRIZES",style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.blue
+                          ),)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 50),
+                          width: 190,
+                          height: 80,
+
+                          decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(11),
+                              border: Border.all(color: Colors.blue,
+                                  width: 3)
+                          ),
+                          child: Center(child: Text("10K+ ATTENDEES",style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.blue
+                          ),)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 150),
+                          width: 190,
+                          height: 80,
+
+                          decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(11),
+                              border: Border.all(color: Colors.blue,
+                                  width: 3)
+                          ),
+                          child: Center(child: Text("25+ EVENTS",style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.blue
+                          ),)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("APPLY HERE TO BE OUR CAMPUS AMBASSADOR",style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 15
+                        ),),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            color: Colors.black54,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blue,
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(4,4),
+                              ),
+                              BoxShadow(
+                                color: Colors.blue,
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(-4,-4),
+                              )],
+                          ),
+                          child: Center(child: Text("CLICK HERE",style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700
+                          ),)),
+                        )
+
+                      ],
+                    ),
+                    SizedBox(height: 50,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TimerCountdown(
+                          format: CountDownTimerFormat.daysHoursMinutesSeconds,
+                          endTime: DateTime.now().add(Duration(
+                            days: 20,
+                            hours: 14,
+                            minutes: 15,
+                            seconds: 34
+                          )),
+                          timeTextStyle: TextStyle(color: Colors.white,fontWeight: FontWeight.w700),
+                          descriptionTextStyle: TextStyle(color: Colors.white),
+                          colonsTextStyle: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                  Row(
+
+                    children: [
+                      SizedBox(width: 20,),
+                      Container(
+
+                        child: Text("Events",style: TextStyle(
+                            color: Colors.white,fontWeight: FontWeight.w600,
+                            fontSize: 20
+                        ),),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20,),
-                  // Dates
-                /*  Container(
-                    height: 60,
-                    child: ListView.builder(
-                        itemCount: dates.length,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context,index){
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
 
-                          return InkWell(
-                            onTap: (){
-                               todayDateIs=dates[index].date;
+                      children: [
 
-                              setState(() {
+                        Container(
+                          margin: EdgeInsets.only(top: 10,left: 20),
+                          height: 75,
+                          width: 75,
 
-                              });
-                            },
-                            child: DateTile(
-                              weekDay:dates[index].weekDay,
-                              date:dates[index].date,
-                              isSelected: todayDateIs==dates[index].date,
-                            ),
-                          );
-
-                        }
-                    ),
-                  ),*/
-                  SizedBox(height: 10,),
-                  //Events
-                  Text("All Events",style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),),
-                  SizedBox(height: 10,),
-                  Container(
-                    height: 100,
-                    child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: events.length,
-                      itemBuilder: (context,index){
-                        return InkWell(
-                          onTap: (){
-                            Navigator.push(context,MaterialPageRoute(
-                                builder:(context)=>ShowData()
-                            ));
-                          },
-                          child: EventTile(
-                            imgAssertPath:events[index].imgAssertPath ,
-                            eventType: events[index].eventType,
-
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/robot.png"))
                           ),
-                        );
-                      },
-                    ),
-                  ),
-                  //Populer event
-                  SizedBox(height: 16,),
-                  Text("Populer Event",style: TextStyle(
-                    color: Colors.white,
-                  ),),
-                  Container(
-                    child:ListView.builder(
-                      shrinkWrap: true,
 
-                      itemCount: populerevents.length,
-                      itemBuilder: (context,index){
-                        return PopularEventTile(
-                          desc: populerevents[index].desc,
-                          imageAssetPath: populerevents[index].imageAssetPath,
-                          dates: populerevents[index].date,
-                          address: populerevents[index].address,
-                        );
-                      },
-                    ) ,
-                  ),
-                ],
+
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10,left: 20),
+                          height: 75,
+                          width: 75,
+
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/exhi.png"))
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10,left: 20),
+                          height: 75,
+                          width: 75,
+
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/game.png"))
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+
+                      children: [
+
+                        Container(
+                          margin: EdgeInsets.only(top: 10,left: 20),
+                          height: 75,
+                          width: 75,
+
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/xray.png"))
+                          ),
+
+
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10,left: 20),
+                          height: 75,
+                          width: 75,
+
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/manage.png"))
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 10,left: 20),
+                          height: 75,
+                          width: 75,
+
+                          decoration: BoxDecoration(
+                            image: DecorationImage(image: AssetImage("assets/quiz.png"))
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 50,
+                          width: 150,
+                          decoration: BoxDecoration(
+                            color: Colors.black54,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blue,
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(4,4),
+                              ),
+                              BoxShadow(
+                                color: Colors.blue,
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(-4,-4),
+                              )],
+                          ),
+                          child: Center(child: Text("ALL EVENTS",style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700
+                          ),)),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Registration",style: TextStyle(color: Colors.white,fontSize: 20),)
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height:200,
+                          width: 150,
+                          color: Colors.blue,
+                          child: Center(child: Text("Registration details")),
+                        )
+                      ],
+                    ),
+
+
+
+                  ],
+                ),
+
               ),
             ),
 
@@ -285,4 +492,9 @@ class PopularEventTile extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
 
