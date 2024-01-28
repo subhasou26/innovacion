@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:innovacion/showinbig.dart';
 
 
 class ShowData extends StatefulWidget {
@@ -26,6 +27,7 @@ class _ShowDataState extends State<ShowData> {
         title: Text("Show data"),
         centerTitle: true,
       ),
+
       body: StreamBuilder(
         stream: FirebaseFirestore.instance.collection("events").snapshots(),
         builder: (context,snapshot){
@@ -36,7 +38,9 @@ class _ShowDataState extends State<ShowData> {
                   return InkWell(
                     onTap: (){
                       final uri=Uri.parse(snapshot.data!.docs[index]["gfrom"]);
-                       _lunchs(uri);
+                       //_lunchs(uri);
+                      print(snapshot.data!.docs[index]);
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ShowDetails(snapshot: snapshot,index: index,)));
                     },
                     child: ListTile(
                       leading: CircleAvatar(
