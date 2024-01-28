@@ -48,6 +48,7 @@ class _ShowDataState extends State<ShowData> {
                       ),
                       title: Text("${snapshot.data!.docs[index]["desc"]}"),
                       subtitle: Text("${snapshot.data!.docs[index]["gfrom"]}"),
+                      trailing: Text("${snapshot.data!.docs[index]["date"]}"),
                     ),
                   );
                 },
