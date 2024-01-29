@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:innovacion/data/data.dart';
-import 'package:innovacion/models/date_model.dart';
-import 'package:innovacion/models/event_model.dart';
+import 'package:innovacion/NavBar.dart';
 import 'package:innovacion/models/populer_event_model.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:innovacion/showinbig.dart';
@@ -16,21 +14,18 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<DateModel> dates = [];
-  List<EventModel>events=[];
-  List<PopulerEvent> populerevents = [];
-  String todayDateIs="10";
+
   @override
   void initState() {
     // TODO: implement initState
-    super.initState();
-    dates=getDates();
-    events=getEvents();
-    populerevents=getPopuler();
+
   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: NavBar(),
+      appBar: AppBar(title: Text("INNOVACIA",style: TextStyle(color: Colors.white),),
+      backgroundColor: Colors.black,),
       body: Container(
         child: Stack(
           children: <Widget>[
