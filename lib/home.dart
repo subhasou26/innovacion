@@ -4,6 +4,8 @@ import 'package:innovacion/models/date_model.dart';
 import 'package:innovacion/models/event_model.dart';
 import 'package:innovacion/models/populer_event_model.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
+import 'package:innovacion/showinbig.dart';
+import 'package:innovacion/ShowData.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -204,7 +206,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             color: Colors.white,
                             fontWeight: FontWeight.w700
                           ),)),
-                        )
+                        ),
 
                       ],
                     ),
@@ -316,31 +318,38 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(
-                          height: 50,
-                          width: 150,
-                          decoration: BoxDecoration(
-                            color: Colors.black54,
-                            borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.blue,
-                                spreadRadius: 2,
-                                blurRadius: 8,
-                                offset: Offset(4,4),
-                              ),
-                              BoxShadow(
-                                color: Colors.blue,
-                                spreadRadius: 2,
-                                blurRadius: 8,
-                                offset: Offset(-4,-4),
-                              )],
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(context,MaterialPageRoute(
+                                builder:(context)=>ShowData()
+                            ));
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 150,
+                            decoration: BoxDecoration(
+                              color: Colors.black54,
+                              borderRadius: BorderRadius.circular(15),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.blue,
+                                  spreadRadius: 2,
+                                  blurRadius: 8,
+                                  offset: Offset(4,4),
+                                ),
+                                BoxShadow(
+                                  color: Colors.blue,
+                                  spreadRadius: 2,
+                                  blurRadius: 8,
+                                  offset: Offset(-4,-4),
+                                )],
+                            ),
+                            child: Center(child: Text("ALL EVENTS",style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w700
+                            ),)),
                           ),
-                          child: Center(child: Text("ALL EVENTS",style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w700
-                          ),)),
                         )
                       ],
                     ),
