@@ -29,6 +29,9 @@ class NavBar extends StatelessWidget {
               ),
             ),
             ListTile(
+              onTap: (){
+                
+              },
               leading: Icon(Icons.home),
               title: Text("Home",style: TextStyle(color: Colors.white),),
             ), ListTile(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:innovacion/NavBar.dart';
-import 'package:innovacion/models/populer_event_model.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 import 'package:innovacion/showinbig.dart';
 import 'package:innovacion/ShowData.dart';
@@ -41,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
             SingleChildScrollView(
               child: Container(
 
-                padding: EdgeInsets.only(top: 50),
+                padding: EdgeInsets.only( top:50),
                 child: Column(
 
                   children: [
@@ -355,17 +354,97 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text("Registration",style: TextStyle(color: Colors.white,fontSize: 20),)
                       ],
                     ),
+                    SizedBox(height: 30,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          height:200,
-                          width: 150,
-                          color: Colors.blue,
-                          child: Center(child: Text("Registration details")),
+                          width: 300,
+                          height: 300,
+
+                          decoration: BoxDecoration(
+                            color: Colors.black54,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.blue,
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(4,4),
+                              ),
+                              BoxShadow(
+                                color: Colors.blue,
+                                spreadRadius: 2,
+                                blurRadius: 8,
+                                offset: Offset(-4,-4),
+                              )],
+                          ),
+                          child:Column(
+                            children: [
+
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(height: 20,),
+                                Text("Central Registration",style: TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.w700),)
+                              ],),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Text("Central RegistrationCan Register for all the events excluding Gaming & Photography with Central RegistrationPer-Head Registration Fee of Rs 300Certificates of Participation for all the Events",style: TextStyle(
+                                        color: Colors.white,fontSize: 18
+                                      ),),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  InkWell(
+                                    onTap: (){
+                                      Navigator.push(context,MaterialPageRoute(
+                                          builder:(context)=>ShowData()
+                                      ));
+                                    },
+                                    child: Container(
+                                      height: 50,
+                                      width: 150,
+                                      decoration: BoxDecoration(
+                                        color: Colors.black54,
+                                        borderRadius: BorderRadius.circular(15),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.black54,
+                                            spreadRadius: 2,
+                                            blurRadius: 8,
+                                            offset: Offset(4,4),
+                                          ),
+                                          BoxShadow(
+                                            color: Colors.black54,
+                                            spreadRadius: 2,
+                                            blurRadius: 8,
+                                            offset: Offset(-4,-4),
+                                          )],
+                                      ),
+                                      child: Center(child: Text("PAY",style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w700
+                                      ),)),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),
+                    SizedBox(height: 30,),// central registration
 
 
 
@@ -381,124 +460,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-class DateTile extends StatelessWidget {
-  String weekDay;
-  String date;
-  bool isSelected;
-  DateTile({required this.weekDay,required this.date,required this.isSelected});
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 15),
-      decoration: BoxDecoration(
-        color: isSelected?Color(0xffFCCD00):Colors.transparent,
-        borderRadius: BorderRadius.circular(16)
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(date,style: TextStyle(
-            color: isSelected?Colors.black:Colors.white,
-            fontWeight: FontWeight.w600,
-          ),),
-          SizedBox(height: 13,),
-          Text(weekDay,style:TextStyle(
-            color: isSelected?Colors.black:Colors.white,
-            fontWeight: FontWeight.w600,
-          ),)
-        ],
-      ),
-    );
-  }
-}
-
-class EventTile extends StatelessWidget {
-  String imgAssertPath;
-  String eventType;
-  EventTile({required this.imgAssertPath,required this.eventType});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      margin: EdgeInsets.only(right: 16),
-      decoration: BoxDecoration(
-        color: Color(0xff29404E),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image.asset(imgAssertPath,height:40 ,),
-          SizedBox(height: 8,),
-          Text(eventType,style: TextStyle(
-            color: Colors.white
-          ),)
-        ],
-      ),
-    );
-  }
-}
-
-class PopularEventTile extends StatelessWidget {
-  String desc;
-  String dates;
-  String address;
-  String imageAssetPath;
-  PopularEventTile({required this.desc,required this.dates,required this.address,required this.imageAssetPath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-
-      child: Row(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(desc,style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20
-                  ),),
-                  Row(
-                    children: <Widget>[
-
-                      Image.asset("assets/calender.png",height:10),
-
-                      SizedBox(width: 8,),
-                      Text(dates,style:TextStyle(
-                          color: Colors.white,
-                          fontSize:20,
-                      ),),
-                    ],
-                  ),
-                  Row(
-                    children: <Widget>[
-                      Image.asset("assets/location.png",height:10),
-                      SizedBox(width: 8,),
-                      Text(address,style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 20
-                      ),),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Image.asset("assets/tileimg.png",height: 60),
-        ],
-      ),
-    );
-  }
-}
-
-
-
 
 
 
