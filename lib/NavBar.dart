@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:innovacion/Pages/About.dart';
+import 'package:innovacion/Pages/Contact_us.dart';
+import 'package:innovacion/Pages/Event.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -29,15 +32,22 @@ class NavBar extends StatelessWidget {
               ),
             ),
             ListTile(
-              onTap: (){
-                
-              },
               leading: Icon(Icons.home),
               title: Text("Home",style: TextStyle(color: Colors.white),),
             ), ListTile(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(
+                    builder:(context)=>About()
+                ));
+              },
               leading: Icon(Icons.question_mark),
               title: Text("About",style: TextStyle(color: Colors.white),),
             ),ListTile(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(
+                    builder:(context)=>Event()
+                ));
+              },
               leading: Icon(Icons.event),
               title: Text("Events",style: TextStyle(color: Colors.white),),
             ),ListTile(
@@ -50,6 +60,11 @@ class NavBar extends StatelessWidget {
               leading: Icon(Icons.boy),
               title: Text("Partners",style: TextStyle(color: Colors.white),),
             ),ListTile(
+              onTap: (){
+                Navigator.push(context,MaterialPageRoute(
+                    builder:(context)=>ContactUs()
+                ));
+              },
               leading: Icon(Icons.contact_mail),
               title: Text("Contact Us",style: TextStyle(color: Colors.white),),
             ),
