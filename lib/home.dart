@@ -21,6 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    double screenWidth=MediaQuery.of(context).size.width;
+    double screenHeight=MediaQuery.of(context).size.height;
+    print(screenWidth);
+    bool isTablet(BuildContext context)=>MediaQuery.of(context).size.width>=500;
+
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(title: Text("INNOVACIA",style: TextStyle(color: Colors.white),),
@@ -47,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+
                         Text("About The Event",style: TextStyle(
                             color: Colors.white,
                             fontSize: 25,
@@ -93,29 +99,33 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),)),
                         ),
                       ],
-                    ),
+                    ), //6l+
                     SizedBox(height: 20,),
                     Row(
 
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(left: 150),
-                          width: 190,
-                          height: 80,
 
-                          decoration: BoxDecoration(
-                              color: Colors.black54,
-                              borderRadius: BorderRadius.circular(11),
-                              border: Border.all(color: Colors.blue,
-                                  width: 3)
+                          Container(
+
+                            margin: EdgeInsets.only(left: 150),
+                            width: 190,
+                            height: 80,
+
+                            decoration: BoxDecoration(
+                                color: Colors.black54,
+                                borderRadius: BorderRadius.circular(11),
+                                border: Border.all(color: Colors.blue,
+                                    width: 3)
+                            ),
+                            child: Center(child: Text("3.5L+ PRIZES",style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.blue
+                            ),)),
                           ),
-                          child: Center(child: Text("3.5L+ PRIZES",style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.blue
-                          ),)),
-                        ),
+
+
                       ],
-                    ),
+                    ),//3.5l+
                     SizedBox(height: 20,),
                     Row(
 
@@ -137,7 +147,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),)),
                         ),
                       ],
-                    ),
+                    ),//10k attendance
                     SizedBox(height: 20,),
                     Row(
 
